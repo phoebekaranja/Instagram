@@ -9,4 +9,4 @@ class ImageAdmin(admin.ModelAdmin):
 
 admin.site.register(Image)
 admin.site.register(Location)
-admin.site.register(Categorys)
+admin.site.register(Categories)

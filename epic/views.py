@@ -46,11 +46,11 @@ def category_image(request,category_id):
     images=Image.objects.filter(category__name=category_id)
     category= Categories.objects.all()
     location= Location.objects.all()
-    return render(request,'all-images/gallery-images.html',{'epic':images,'category':category,'location':location})
+    return render(request,'all-images/images.html',{'epic':images,'category':category,'location':location})
 
 def location_image(request,location_id):
     epic = Image.objects.filter(location__name=location_id)
     location = Location.objects.all()
-    category= Categorys.objects.all()
+    category= Categories.objects.all()
 
     return render(request,"all-images/images.html", {"epic":epic,"location":location,'category':category})
