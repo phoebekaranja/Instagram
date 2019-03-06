@@ -1,86 +1,7 @@
 from django.test import TestCase
-from .models import Categorys,Image,Location
+from .models import Location,Categories,Images
 import datetime as dt
 # Create your tests here.
-
-
-class ImageTestCLass(TestCase):
-    '''
-    setup self instance of image
-    '''
-    def setUp(self):
-        self.pic = Image(name='movie',description='Avengers')
-
-    '''
-    test instance of image
-    '''
-    def test_instance(self):
-       self.assertTrue(isinstance(self.pic,Image))
-
-
-    '''
-    test save image
-    '''
-
-    def test_save_image(self):
-        self.pic.save_image()
-        images = Image.objects.all()
-        self.assertTrue(len(images)>0)
-
-    '''
-    test delete image
-    '''
-
-    def test_delete_image(self):
-        self.pic.save_image()
-        self.pic.delete_image()
-        images = Image.objects.all()
-        self.assertTrue(len(images)==0)
-
-    def test_get_image_today(self):
-        today_images = Image.todays_images()
-        self.assertTrue(len(today_images)>0)
-
-class CategorysTestClass(TestCase):
-    '''
-    test setup of Categorys
-    '''
-    def setUp(self):
-        self.New = Categorys(name='New')
-
-    '''
-    test instance of category
-    '''
-    def test_instance(self):
-        self.assertTrue(isinstance(self.New,Categorys))
-
-    #def tearDown(self):
-    #     Tags.objects.all().delete()
-    '''
-    test to assertain save category
-    '''
-    def test_save_category(self):
-        self.New.save_category()
-        cat = Categorys.objects.all()
-        self.assertTrue(len(cat)>0)
-    '''
-    test to assert that delete is working
-    '''
-    def test_delete_category(self):
-        self.New.save_category()
-        self.New.delete_category()
-        cat = Categorys.objects.all()
-        self.assertTrue(len(cat)== 0)
-
-    '''
-    test to assert that categorys update
-    '''
-    def test_update_category(self):
-        self.New.save_category()
-        new = Categorys.objects.filter(name='New').update(name='outdated')
-        cat = Categorys.objects.get(name='outdated')
-        self.assertEqual(cat.name,'outdated')
-
 class LocationTestClass(TestCase):
     '''
     test setup of Location
@@ -120,3 +41,82 @@ class LocationTestClass(TestCase):
         new = Location.objects.filter(name='New').update(name='outdated')
         loc = Location.objects.get(name='outdated')
         self.assertEqual(loc.name,'outdated')
+
+
+
+class CategoriesTestClass(TestCase):
+    '''
+    test setup of Categories
+    '''
+    def setUp(self):
+        self.New = Categories(name='New')
+
+    '''
+    test instance of category
+    '''
+    def test_instance(self):
+        self.assertTrue(isinstance(self.New,Categories))
+
+
+    '''
+    test to assertain save category
+    '''
+    def test_save_category(self):
+        self.New.save_category()
+        cat = Categories.objects.all()
+        self.assertTrue(len(cat)>0)
+    '''
+    test to assert that delete is working
+    '''
+    def test_delete_category(self):
+        self.New.save_category()
+        self.New.delete_category()
+        cat = Categories.objects.all()
+        self.assertTrue(len(cat)== 0)
+
+    '''
+    test to assert that categorys update
+    '''
+    def test_update_category(self):
+        self.New.save_category()
+        new = Categories.objects.filter(name='New').update(name='outdated')
+        cat = Categories.objects.get(name='outdated')
+        self.assertEqual(cat.name,'outdated')
+
+
+class ImageTestCLass(TestCase):
+    '''
+    setup self instance of image
+    '''
+    def setUp(self):
+        self.pic = Image(name='movie',description='Avengers')
+
+    '''
+    test instance of image
+    '''
+    def test_instance(self):
+       self.assertTrue(isinstance(self.pic,Image))
+
+
+    '''
+    test save image
+    '''
+
+    def test_save_image(self):
+        self.pic.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)>0)
+
+    '''
+    test delete image
+    '''
+
+    def test_delete_image(self):
+        self.pic.save_image()
+        self.pic.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)==0)
+
+    def test_get_image_today(self):
+        today_images = Image.todays_images()
+        self.assertTrue(len(today_images)>0)
