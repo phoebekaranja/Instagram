@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Location,Categories,Images
+from .models import Location,Categories,Image
 import datetime as dt
 # Create your tests here.
 class LocationTestClass(TestCase):
@@ -117,6 +117,4 @@ class ImageTestCLass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images)==0)
 
-    def test_get_image_today(self):
-        today_images = Image.todays_images()
-        self.assertTrue(len(today_images)>0)
+    
