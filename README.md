@@ -35,7 +35,7 @@ To be able to run this web application, you will need to have a web browser, pre
 
 
 Support and contact details
-If there are any issues on how the code runs, concerns, questions or ideas, kindly reach out to me on my email address; bkn.ngeno@gmail.com.
+If there are any issues on how the code runs, concerns, questions or ideas, kindly reach out to me on my email address; fibilina@gmail.com
 
 ##live link to site
 phoebekaranja
