@@ -10,11 +10,11 @@
  </div>
  <div class="row">
    {% for item in epic %}
-   <div class="col-md-6">
+   <div class="col-md-9">
      <div class="card">
        <!-- Looping through -->
        <img src="{{item.Image_image.url}}" data-toggle="modal" data-target="#myModal{{item.id}}" data-toggle="tooltip"
-         title="click image to view details" style="height:300px;width:520px" class="img-responsive">
+         title="click image to view details" style="height:200px;width:500px" class="img-responsive">
 
      </div>
 
@@ -33,12 +33,12 @@
            <p>{{item.description}}</p>
          </div>
          <div class="modal-footer">
-           <p style="color:lawngreen; font-size:16px;">Posted {{item.pub_date|timesince}}</p>
+           <p style="color:lawngreen; font-size:35px;">Posted {{item.pub_date|timesince}}</p>
            <br>
            <button type="button" class="btn btn-outline-danger btn-bg" data-dismiss="modal" data-toggle="tooltip"
              data-placement="right" title="Close Single Image">Close</button>
            <br>
-           <input type="text" value="https://phoebekaranja.herokuapp.com{{item.Image_image.url}}" id="myInput" style="color:black;">
+           <input type="text" value="https://phoebekaranja.herokuapp.com{{item.Image_image.url}}" id="myInput" style="color:brown;">
            <button type="button" value="https://phoebekaranja.herokuapp.com{{item.Image_image.url}}" onclick="copyLink(this.value)"
              class="btn btn-outline-success" data-toggle="tooltip" data-placement="right" title="Copy Image">Copy
              Image url</button>

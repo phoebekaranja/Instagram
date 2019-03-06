@@ -26,6 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS=['*']
 # development
 if config('MODE')=="dev":
    DATABASES = {
@@ -51,7 +52,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
+#
 # Application definition
 
 INSTALLED_APPS = [
@@ -95,20 +96,24 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gallery.wsgi.application'
+WSGI_APPLICATION = 'wonder.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#      'default':{
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'epic',
-#         'USER':'phoebe',
-#         'PASSWORD':'2018',
-#     }
-# }
+DATABASES = {
+     'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'wonder',
+        'USER':'pheobe',
+        'PASSWORD':'2018',
+    }
+}
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
 
 
 # Password validation
