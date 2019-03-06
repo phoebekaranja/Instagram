@@ -1,5 +1,12 @@
 #gallery
+
+
+
 The application allows users to view image and e.t.c
+
+
+
+
 
 ## Specifications
 To be able to access the application the user should install the latest version of Google chrome or explore and load the live link provided.
@@ -38,6 +45,7 @@ Support and contact details
 If there are any issues on how the code runs, concerns, questions or ideas, kindly reach out to me on my email address; fibilina@gmail.com
 
 ##live link to site
+
 phoebekaranja
 https://still-bayou-16080.herokuapp.com
 License
