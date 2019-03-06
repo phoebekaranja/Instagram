@@ -15,8 +15,7 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.New,Location))
 
-    # def tearDown(self):
-    #     Tags.objects.all().delete()
+
     '''
     test to assertain save Location
     '''
@@ -116,5 +115,3 @@ class ImageTestCLass(TestCase):
         self.pic.delete_image()
         images = Image.objects.all()
         self.assertTrue(len(images)==0)
-
-    
