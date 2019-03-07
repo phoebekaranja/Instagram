@@ -74,7 +74,7 @@ class CategoriesTestClass(TestCase):
         self.assertTrue(len(cat)== 0)
 
     '''
-    test to assert that categorys update
+    test to assert that categories update
     '''
     def test_update_category(self):
         self.New.save_category()
