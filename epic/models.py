@@ -34,7 +34,7 @@ class Categories(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=20)
-    description = models.TextField(default="lol", null=True)
+    statement = models.TextField(default="lol", null=True)
     location = models.ForeignKey(Location, null=True)
     category = models.ManyToManyField(Categories, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
